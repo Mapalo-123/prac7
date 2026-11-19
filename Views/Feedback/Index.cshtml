@@ -1,0 +1,79 @@
+﻿@model Prac7.Models.Feedback
+
+@{
+    ViewBag.Title = "Submit Feedback";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .page-container {
+        max-width: 500px;
+        margin: 10px auto;
+    }
+
+    .feedback-card {
+        background: white;
+        padding: 18px;
+        border-radius: 8px;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+
+    .form-group {
+        margin-bottom: 12px;
+    }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 7px;
+        }
+
+    .form-control {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 11px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .error {
+        color: red;
+        font-size: 13px;
+    }
+
+    .submit-button {
+        background: #263b63;
+        color: white;
+        border: none;
+        padding: 12px 22px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .success-message {
+        background: #d4edda;
+        color: #155724;
+        padding: 12px;
+        border-radius: 5px;
+        margin-bottom: 18px;
+    }
+</style>
+
+<div class="page-container">
+
+    <h2 style="text-align:center;">Submit Your Feedback</h2>
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="success-message">
+            @TempData["SuccessMessage"]
+        </div>
+    }
+
+    @Html.Partial("_FeedbackForm", Model)
+
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewBag.Title - Feedback Portal</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f3f5f9;
+            color: #333;
+        }
+
+        header {
+            background: #263b63;
+            color: white;
+            padding: 18px;
+            text-align: center;
+        }
+
+        nav {
+            background: #192b4b;
+            padding: 12px;
+            text-align: center;
+        }
+
+            nav a {
+                color: white;
+                text-decoration: none;
+                margin: 0 15px;
+                font-weight: bold;
+            }
+
+        main {
+            min-height: 450px;
+            padding: 20px 15px;
+        }
+
+        footer {
+            background: #263b63;
+            color: white;
+            text-align: center;
+            padding: 12px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Feedback Management Portal</h1>
+        <p>We value your feedback</p>
+    </header>
+
+    <nav>
+        @Html.ActionLink("Home", "Index", "Feedback")
+        @Html.ActionLink("Submit Feedback", "Index", "Feedback")
+    </nav>
+
+    <main>
+        @RenderBody()
+    </main>
+
+    <footer>
+        <p>Feedback Management System | .NET Technologies</p>
+    </footer>
+
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
